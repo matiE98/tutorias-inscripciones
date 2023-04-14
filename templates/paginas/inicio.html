@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block titulo %} Inicio {% endblock %}
+{% block contenido %} 
+    <br/>
+    <div class="row">
+        <div class="col">
+            <div class="card card-body">
+                <form method="get">
+                    {{ filtro.form }}
+                    <button class="btn btn-primary" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </br>
+
+    {% if cantidad == 1 %}
+    <div class="card">
+        <div class="card-header">
+            Alumno inscripto
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">DNI</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Carrera</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for alumno in alumnos %}
+                    <tr>
+                        <td>{{ alumno.dni }}</td>
+                        <td>{{ alumno.nombre }}</td>
+                        <td>{{ alumno.carrera }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% else %}
+        {% if cantidad == 0 and get == 'GET' %}
+            <h4>No está inscripto<h4/>
+        {% endif %}
+    {% endif %}
+{% endblock %}
