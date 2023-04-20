@@ -2,14 +2,20 @@
 
 {% block titulo %} Inicio {% endblock %}
 {% block contenido %} 
+
     <br/>
     <div class="row">
         <div class="col">
-            <div class="card card-body">
-                <form method="get">
-                    {{ filtro.form }}
-                    <button class="btn btn-primary" type="submit">Buscar</button>
-                </form>
+            <div class="card">
+                <div class="card-header">
+                    COMPROBÁ SI ESTÁS INCRIPTO INGRESANDO TU DNI
+                </div>    
+                <div class="card-body">
+                    <form method="get">
+                        {{ filtro.form }}
+                        <button class="btn btn-primary" type="submit">Buscar</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -18,7 +24,7 @@
     {% if cantidad == 1 %}
     <div class="card">
         <div class="card-header">
-            Alumno inscripto
+            ALUMNO INSCRIPTO
         </div>
         <div class="card-body">
             <table class="table">
@@ -43,7 +49,11 @@
     </div>
     {% else %}
         {% if cantidad == 0 and get == 'GET' %}
-            <h4>No está inscripto<h4/>
+            <div class="card">
+                <div class="card-body"> 
+                    <h4>NO ESTÁ INSCRIPTO<h4/>
+                </div>
+            </div>
         {% endif %}
     {% endif %}
 {% endblock %}

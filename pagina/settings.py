@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'inscriptos',
-    'crispy_forms',
     'django_filters'
 ]
 
@@ -83,11 +82,10 @@ WSGI_APPLICATION = 'pagina.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(        # Feel free to alter this value to suit your needs.        
-    default='postgresql://postgres:postgres@localhost:5432/mysite',        
-    conn_max_age=600    
+        default='postgresql://postgres:postgres@localhost:5432/mysite',        
+        conn_max_age=600    
     )
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -126,7 +124,7 @@ USE_TZ = True # False si se usa Postgresql, True si se usa MySQL
 
 # This setting tells Django at which URL static files are going to be served to the user.
 # Here, they well be accessible at your-domain.onrender.com/static/...
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 # Following settings only make sense on production and may break development environments.
 if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
     # in your application directory on Render.
