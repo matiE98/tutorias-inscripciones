@@ -8,6 +8,32 @@ body {
     font-size: 16px;
 }
 
+
+.table-mobile {
+    display: none;
+    width: 100%;
+}
+
+.table-mobile .fila .columna {
+    display: flex;
+    text-align: left;
+}
+
+
+.table-mobile .fila .columna .header, 
+.table-mobile .fila .columna .contenido {
+    border: 1px solid #ff9d8e;
+    padding: 0.5em;
+}
+
+.table-mobile .fila .columna .header{
+    width: 30%; 
+}
+
+.table-mobile .fila .columna .contenido{
+    width: 70%;  
+}
+
 .container {
     padding-top: 14em;
     padding-left: 12em;
@@ -56,20 +82,30 @@ body {
     }
     .container {
         padding-top: 12em;
-        padding-left: 5em;
-        padding-right: 5em;
+        padding-left: 1em;
+        padding-right: 1em;
         align-items: center;
     }
 }
 
-@media (max-width: 576px)  {
+@media screen and (max-width: 600px) {
     body {
         font-size: 12px;
     }
+    
+    .table-mobile {
+        display: flex;
+        text-align: left;
+    }
+
+    .table {
+        display: none;
+    }
+
     .container {
         padding-top: 7em;
-        padding-left: 2em;
-        padding-right: 2em;
+        padding-left: 1em;
+        padding-right: 1em;
         align-items: center;
     }
 }

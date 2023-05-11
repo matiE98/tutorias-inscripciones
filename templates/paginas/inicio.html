@@ -34,6 +34,7 @@
                         <th scope="col">Apellido</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Carrera</th>
+                        <th scope="col">Correo</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,10 +44,37 @@
                         <td>{{ alumno.apellido }}</td>
                         <td>{{ alumno.nombre }}</td>
                         <td>{{ alumno.carrera }}</td>
+                        <td>{{ alumno.email }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
+            <div class="table-mobile">
+                <div class="fila">
+                    {% for alumno in alumnos %}
+                        <div class="columna">
+                            <div class="header">DNI</div>
+                            <div class="contenido">{{ alumno.dni }}</div>
+                        </div>  
+                        <div class="columna">
+                            <div class="header">Apellido</div>
+                            <div class="contenido">{{ alumno.apellido }}</div>
+                        </div>  
+                        <div class="columna">
+                            <div class="header">Nombre</div>
+                            <div class="contenido">{{ alumno.nombre }}</div>
+                        </div>  
+                        <div class="columna">
+                            <div class="header">Carrera</div>
+                            <div class="contenido">{{ alumno.carrera }}</div>
+                        </div>  
+                        <div class="columna">
+                            <div class="header">Correo</div>
+                            <div class="contenido">{{ alumno.email }}</div>
+                        </div>
+                    {% endfor %}    
+                </div>             
+            </div>
         </div>
     </div>
     {% else %}

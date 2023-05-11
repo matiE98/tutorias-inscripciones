@@ -12,7 +12,4 @@ def buscarAlumno(request):
    alumnos = filtro.qs
    cantidad = alumnos.count()
    get = str(request.method)
-   print(get)
-   print(' ')
-   print(cantidad)
    return render(request, 'paginas/inicio.html', {'alumnos': alumnos, 'filtro': filtro, 'cantidad': cantidad, 'get':get} )
